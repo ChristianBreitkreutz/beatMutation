@@ -31,11 +31,11 @@ public class LilypondElements {
         return "title = \"" + name + "\"";
     }
 
-    public static String note(String type, int lenght) {
+    public static String note(String type, String lenght) {
         return type + lenght;
     }
 
-    public static String chordmode(List<String> notes, int lenght) {
+    public static String chordmode(List<String> notes, String lenght) {
         return note("<" + spacedString(notes) + ">", lenght);
     }
 

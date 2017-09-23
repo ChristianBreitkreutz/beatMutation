@@ -19,7 +19,7 @@ public class BarSize {
         int oddCounter = 0;
         for (int i = 0; i < elements.size(); i++) {
             oddCounter++;
-            if (i + 1 < elements.size() && elements.get(i + 1) == "") {
+            if (i + 1 < elements.size() && elements.get(i + 1).equals("empty")) {
                 if (oddCounter % 2 > 0) {
                     noteLenght /= 2;
                 }

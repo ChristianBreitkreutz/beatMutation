@@ -26,12 +26,12 @@ public class LilipondElementsTest {
 
     @Test
     public void note() {
-        assertEquals("hh8", LilypondElements.note("hh", 8));
+        assertEquals("hh8.", LilypondElements.note("hh", "8."));
     }
 
     @Test
     public void chordmode() {
-        assertEquals("<hh sn bd>4", LilypondElements.chordmode(Arrays.asList("hh", "sn", "bd"), 4));
+        assertEquals("<hh sn bd>4.", LilypondElements.chordmode(Arrays.asList("hh", "sn", "bd"), "4."));
     }
 
     @Test
@@ -41,10 +41,10 @@ public class LilipondElementsTest {
 
     @Test
     public void all() {
-        String startGroup = LilypondElements.chordmode(Arrays.asList("a", "b"), 4);
+        String startGroup = LilypondElements.chordmode(Arrays.asList("a", "b"), "4");
         String startGroupWithComment = LilypondElements.addComment(startGroup, "testComment");
-        String noteC = LilypondElements.note("c", 4);
-        String noteD = LilypondElements.note("d", 4);
+        String noteC = LilypondElements.note("c", "4");
+        String noteD = LilypondElements.note("d", "4");
         String bar = LilypondElements.bindGroup(startGroupWithComment, Arrays.asList(noteC, noteD));
         String fullBar = bar + LilypondElements.smallBarLine() + bar + LilypondElements.repeatBarLine() + LilypondElements.lineBreak();
         assertEquals("<a b>4^\"testComment\"[c4 d4]\\sb<a b>4^\"testComment\"[c4 d4]\\rb\\break", fullBar);
