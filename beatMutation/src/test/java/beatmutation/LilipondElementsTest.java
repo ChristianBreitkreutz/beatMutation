@@ -23,6 +23,10 @@ public class LilipondElementsTest {
     public void title() {
         assertEquals("title = \"Test Title\"", LilypondElements.titel("Test Title"));
     }
+    @Test
+    public void notes() {
+        assertEquals("notes = \\drummode { hh bd sn }", LilypondElements.notes("hh bd sn"));
+    }
 
     @Test
     public void note() {

@@ -26,6 +26,9 @@ public class LilypondElements {
     public static String footerInclude() {
         return "\\include \"baseFiles/DrumStaff_base.ly\"";
     }
+    public static String notes(String notes) {
+        return "notes = \\drummode { " + notes +" }";
+    }
 
     public static String titel(String name) {
         return "title = \"" + name + "\"";
